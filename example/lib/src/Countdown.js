@@ -21,6 +21,13 @@ export default class Countdown extends Component {
       //   end.set({ hour: 0, minute: 0, second: 0, millisecond: 0 });
       var now = moment();
       var mid = moment(1577398232000);
+      const diff = moment
+        .utc(
+          moment(mid, "DD/MM/YYYY HH:mm:ss").diff(
+            moment(now, "DD/MM/YYYY HH:mm:ss")
+          )
+        )
+        .utcOffset(0);
       var diff1 = moment
         .utc(
           moment(mid, "DD/MM/YYYY HH:mm:ss").diff(
@@ -30,6 +37,9 @@ export default class Countdown extends Component {
         .utcOffset(0)
         .format("HH:mm:ss");
 
+      const hours = diff.format("HH");
+      const minutes = diff.format("mm");
+      const seconds = diff.format("ss");
       console.log("moment.js: " + diff1);
 
       //   const minutes = end.diff(now, "minutes");
@@ -38,7 +48,7 @@ export default class Countdown extends Component {
       //   const hours = countdown.format("HH");
       //   const minutes = countdown.format("mm");
       //   const seconds = countdown.format("ss");
-      //   this.setState({ hours, minutes, seconds });
+      this.setState({ hours, minutes, seconds });
     }, 1000);
   }
 
