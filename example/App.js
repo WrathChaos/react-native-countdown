@@ -1,13 +1,6 @@
 import React from "react";
-import {
-  SafeAreaView,
-  StyleSheet,
-  ScrollView,
-  View,
-  Text,
-  StatusBar
-} from "react-native";
-import Countdown from "./lib/src/Countdown";
+import { StatusBar, SafeAreaView } from "react-native";
+import Countdown from "@freakycoder/react-native-countdown";
 import moment from "moment";
 
 const App = () => {
