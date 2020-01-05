@@ -1,7 +1,7 @@
 {
-  "name": "react-native-library-boilerplate",
-  "version": "0.0.2",
-  "description": "Description for library",
+  "name": "@freakycoder/react-native-countdown",
+  "version": "0.0.1",
+  "description": "Moment based extremely easy to use Countdown for React Native",
   "keywords": [
     "FreakyCoder",
     "freakycoder",
@@ -14,13 +14,14 @@
     "rn"
   ],
   "homepage": "https://www.freakycoder.com",
-  "bugs": "https://github.com/WrathChaos/react-native-library-boilerplate/issues",
-  "main": "./lib/src/index.js",
-  "repository": "git@github.com:WrathChaos/react-native-library-boilerplate.git",
+  "bugs": "https://github.com/WrathChaos/react-native-countdown/issues",
+  "main": "./lib/src/Countdown.js",
+  "repository": "git@github.com:WrathChaos/react-native-countdown.git",
   "author": "Kuray (FreakyCoder) <kurayogun@gmail.com>",
   "license": "MIT",
   "peerDependencies": {
     "react": ">= 16.x.x",
-    "react-native": ">= 0.55.x"
+    "react-native": ">= 0.55.x",
+    "moment": ">= 2.24.0"
   }
 }
