@@ -10,7 +10,9 @@
     "lint": "eslint ."
   },
   "dependencies": {
+    "@freakycoder/react-native-countdown": "0.0.1",
     "moment": "^2.24.0",
+    "moment-duration-format": "^2.3.2",
     "react": "16.9.0",
     "react-native": "0.61.5"
   },

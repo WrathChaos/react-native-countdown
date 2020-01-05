@@ -51,16 +51,22 @@ All Text Component feature can be send via props OR you can use textStyle
   start={moment(1578240964000)}
   end={moment(1578244564000)}
   fontFamily="BurbankBigCondensed-Black" // All Text Component feature can be send via props OR you can use textStyle
+  defaultCountdown=" - / - : - : -"
+  format="d[d]  hh:mm:ss"
 />
 ```
 
 # Configuration - Props
 
-| Property  |  Type   | Default | Description                                             |
-| --------- | :-----: | :-----: | ------------------------------------------------------- |
-| start     | boolean |  true   | make the button outline                                 |
-| end       | boolean |  false  | make the button with a solid background and a shadow    |
-| textStyle | boolean |  false  | make the button with a gradient background and a shadow |
+Check the example for the customizable `format` and `defaultCountdown` props.
+
+| Property         |  Type   |  Default  | Description                                             |
+| ---------------- | :-----: | :-------: | ------------------------------------------------------- |
+| start            | boolean |   true    | make the button outline                                 |
+| end              | boolean |   false   | make the button with a solid background and a shadow    |
+| textStyle        | boolean |   false   | make the button with a gradient background and a shadow |
+| defaultCountdown | string  | - : - : - | default countdown format before the countdown starts    |
+| format           | string  | hh:mm:ss  | set your own format for the countdown                   |
 
 ## Roadmap
 

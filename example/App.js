@@ -10,7 +10,12 @@ const App = () => {
       <SafeAreaView
         style={{ flex: 1, alignItems: "center", justifyContent: "center" }}
       >
-        <Countdown start={moment(1578240964000)} end={moment(1578244564000)} />
+        <Countdown
+          start={moment(1578247689000)}
+          end={moment(1578557635000)}
+          defaultCountdown=" - / - : - : -"
+          format="d[d]  hh:mm:ss"
+        />
       </SafeAreaView>
     </>
   );
