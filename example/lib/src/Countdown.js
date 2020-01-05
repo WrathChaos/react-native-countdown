@@ -1,7 +1,8 @@
 import React, { Component } from "react";
-import { Text, View } from "react-native";
+import PropTypes from "prop-types";
+import { Text } from "react-native";
 import moment from "moment";
-// import "moment-countdown";
+import styles, { _textStyle } from "./Countdown.style";
 
 export default class Countdown extends Component {
   constructor(props) {
@@ -14,41 +15,31 @@ export default class Countdown extends Component {
   }
 
   componentDidMount() {
+    const { start = moment(), end = moment() } = this.props;
+
     this.interval = setInterval(() => {
-      //   const { now = moment(), end } = this.props;
-      //   const now = moment();
-      //   const end = moment().utcOffset(3);
-      //   end.set({ hour: 0, minute: 0, second: 0, millisecond: 0 });
-      var now = moment();
-      var mid = moment(1577398232000);
+      let startTime = start;
+      let newStartTime = startTime.add(1, "second");
+      let endTime = end;
       const diff = moment
         .utc(
-          moment(mid, "DD/MM/YYYY HH:mm:ss").diff(
-            moment(now, "DD/MM/YYYY HH:mm:ss")
+          moment(endTime, "DD/MM/YYYY HH:mm:ss").diff(
+            moment(newStartTime, "DD/MM/YYYY HH:mm:ss")
           )
         )
         .utcOffset(0);
-      var diff1 = moment
-        .utc(
-          moment(mid, "DD/MM/YYYY HH:mm:ss").diff(
-            moment(now, "DD/MM/YYYY HH:mm:ss")
-          )
-        )
-        .utcOffset(0)
-        .format("HH:mm:ss");
 
-      const hours = diff.format("HH");
-      const minutes = diff.format("mm");
-      const seconds = diff.format("ss");
-      console.log("moment.js: " + diff1);
+      console.log("Diff:", diff);
 
-      //   const minutes = end.diff(now, "minutes");
-      //   const seconds = end.diff(now, "seconds");
-      //   const countdown = moment(end - now);
-      //   const hours = countdown.format("HH");
-      //   const minutes = countdown.format("mm");
-      //   const seconds = countdown.format("ss");
-      this.setState({ hours, minutes, seconds });
+      if (diff <= 0) {
+        this.setState({ hours: "00", minutes: "00", seconds: "00" });
+        clearInterval(this.interval);
+      } else {
+        const hours = diff.format("HH");
+        const minutes = diff.format("mm");
+        const seconds = diff.format("ss");
+        this.setState({ hours, minutes, seconds });
+      }
     }, 1000);
   }
 
@@ -66,26 +57,16 @@ export default class Countdown extends Component {
   }
 
   render() {
+    const { textStyle } = this.props;
     const { hours, minutes, seconds } = this.state;
     return (
-      <Text
-        style={{
-          fontSize: 18,
-          marginRight: 16,
-          color: "red",
-          //   fontFamily: "BurbankBigCondensed-Black",
-          textAlign: "right"
-          //   shadowRadius: 0.4,
-          //   shadowOpacity: 0.5,
-          //   shadowColor: "#000",
-          //   shadowOffset: {
-          //     width: 0,
-          //     height: 2
-          //   }
-        }}
-      >
+      <Text style={textStyle} {...this.props}>
         {`${hours} : ${minutes} : ${seconds}`}
       </Text>
     );
   }
 }
+
+Countdown.defaultProps = {
+  textStyle: styles.textStyle
+};

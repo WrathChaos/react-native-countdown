@@ -17,7 +17,7 @@ const App = () => {
       <SafeAreaView
         style={{ flex: 1, alignItems: "center", justifyContent: "center" }}
       >
-        <Countdown end={moment(1577410232000)} />
+        <Countdown start={moment(1578240964000)} end={moment(1578244564000)} />
       </SafeAreaView>
     </>
   );
