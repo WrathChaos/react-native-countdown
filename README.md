@@ -30,7 +30,8 @@ npm i @freakycoder/react-native-countdown
 ```js
 "react": ">= 16.x.x",
 "react-native": ">= 0.55.x",
-"moment": ">= 2.24.0"
+"moment": ">= 2.24.0",
+"moment-duration-format": ">= 2.3.2",
 ```
 
 # Usage
@@ -71,6 +72,9 @@ Check the example for the customizable `format` and `defaultCountdown` props.
 ## Roadmap
 
 - [x] ~~LICENSE~~
+- [ ] Typescript
+- [ ] Article for Medium
+- [ ] BuyMeACoffee Link/Widget
 
 ## Author
 
