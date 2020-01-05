@@ -12,7 +12,7 @@
 
 <p align="center">
   <img alt="React Native Countdown"
-        src="assets/Screenshots/JSLibraryBoilerplate.png" />
+        src="assets/Screenshots/example.gif" />
 </p>
 
 # Installation
