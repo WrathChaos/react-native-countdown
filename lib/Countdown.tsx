@@ -7,8 +7,8 @@ import moment from "moment";
 import styles from "./Countdown.style";
 
 export interface ICountdownProps {
-  end: number;
-  start: number;
+  end: moment.Moment;
+  start: moment.Moment;
   format: string;
   textStyle: any;
   defaultCountdown: string;
