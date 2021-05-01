@@ -1,28 +1,54 @@
 import React, { Component } from "react";
-import PropTypes from "prop-types";
 import { Text } from "react-native";
 import moment from "moment";
-import styles, { _textStyle } from "./Countdown.style";
-import momentDurationFormatSetup from "moment-duration-format";
+/**
+ * ? Local Imports
+ */
+import styles from "./Countdown.style";
 
-momentDurationFormatSetup(moment);
+export interface ICountdownProps {
+  end: number;
+  start: number;
+  format: string;
+  textStyle: any;
+  defaultCountdown: string;
+  onCountdownOver: () => void;
+}
 
-export default class Countdown extends Component {
-  constructor(props) {
+interface IState {
+  countdown: string;
+  hours: string;
+  minutes: string;
+  seconds: string;
+  timer: any;
+}
+
+export default class Countdown extends Component<ICountdownProps, IState> {
+  interval: any = null;
+
+  constructor(props: ICountdownProps) {
     super(props);
     this.state = {
-      countdown: props.defaultCountdown
+      hours: "",
+      minutes: "",
+      seconds: "",
+      timer: undefined,
+      countdown: (props.defaultCountdown = "- : - : -"),
     };
   }
 
   componentDidMount() {
-    const { start = moment(), end = moment(), format } = this.props;
+    const {
+      start = moment(),
+      end = moment(),
+      format = "hh:mm:ss",
+    } = this.props;
     this.interval = setInterval(() => {
       const countDownStart = start.add(1, "second");
       const then = moment(countDownStart).format("DD/MM/YYYY HH:mm:ss");
       const now = moment(end).format("DD/MM/YYYY HH:mm:ss");
       const ms = moment(now, "DD/MM/YYYY HH:mm:ss").diff(
-        moment(then, "DD/MM/YYYY HH:mm:ss")
+        moment(then, "DD/MM/YYYY HH:mm:ss"),
       );
       const duration = moment.duration(ms);
       const countdown = duration.format(format);
@@ -38,8 +64,8 @@ export default class Countdown extends Component {
 
   componentDidUpdate() {
     if (this.state.timer === 1) {
-      const { onCoundownOver } = props;
-      onCoundownOver && onCoundownOver();
+      const { onCountdownOver } = this.props;
+      onCountdownOver && onCountdownOver();
       clearInterval(this.interval);
       this.forceUpdate();
     }
@@ -53,20 +79,9 @@ export default class Countdown extends Component {
     const { textStyle } = this.props;
     const { countdown } = this.state;
     return (
-      <Text style={textStyle} {...this.props}>
+      <Text style={[styles.textStyle, textStyle]} {...this.props}>
         {countdown}
       </Text>
     );
   }
 }
-
-Countdown.propTypes = {
-  format: PropTypes.string,
-  defaultCountdown: PropTypes.string
-};
-
-Countdown.defaultProps = {
-  format: "hh:mm:ss",
-  textStyle: styles.textStyle,
-  defaultCountdown: "- : - : -"
-};
