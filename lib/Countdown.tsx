@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import * as React from "react";
 import { Text } from "react-native";
 import moment from "moment";
 /**
@@ -23,7 +23,10 @@ interface IState {
   timer: any;
 }
 
-export default class Countdown extends Component<ICountdownProps, IState> {
+export default class Countdown extends React.Component<
+  ICountdownProps,
+  IState
+> {
   interval: any = null;
 
   constructor(props: ICountdownProps) {
@@ -33,7 +36,7 @@ export default class Countdown extends Component<ICountdownProps, IState> {
       minutes: "",
       seconds: "",
       timer: undefined,
-      countdown: (props.defaultCountdown || "- : - : -"),
+      countdown: props.defaultCountdown || "- : - : -",
     };
   }
 
