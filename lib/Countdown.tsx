@@ -9,10 +9,10 @@ import styles from "./Countdown.style";
 export interface ICountdownProps {
   end: moment.Moment;
   start: moment.Moment;
-  format: string;
-  textStyle: any;
-  defaultCountdown: string;
-  onCountdownOver: () => void;
+  format?: string;
+  textStyle?: any;
+  defaultCountdown?: string;
+  onCountdownOver?: () => void;
 }
 
 interface IState {
