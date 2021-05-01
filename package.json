@@ -1,6 +1,6 @@
 {
   "name": "@freakycoder/react-native-countdown",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "description": "Moment based extremely easy to use Countdown for React Native",
   "keywords": [
     "FreakyCoder",
@@ -27,10 +27,7 @@
     "postversion": "git push && git push --tags"
   },
   "peerDependencies": {
-    "react": ">= 16.x.x",
-    "react-native": ">=0.63.x",
-    "moment": ">= 2.24.0",
-    "moment-duration-format": ">= 2.3.2"
+    "moment": ">= 2.24.0"
   },
   "devDependencies": {
     "@react-native-community/eslint-config": "^2.0.0",
