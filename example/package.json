@@ -10,6 +10,7 @@
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx"
   },
   "dependencies": {
+    "@freakycoder/react-native-countdown": "^0.1.6",
     "moment": "^2.29.1",
     "moment-duration-format": "^2.3.2",
     "react": "17.0.1",
