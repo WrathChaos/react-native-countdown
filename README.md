@@ -29,6 +29,7 @@ npm i @freakycoder/react-native-countdown
 
 ```js
 "moment": ">= 2.24.0",
+"moment-duration-format": ">= 2.3.2"
 ```
 
 # Usage

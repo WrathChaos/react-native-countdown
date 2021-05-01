@@ -27,7 +27,8 @@
     "postversion": "git push && git push --tags"
   },
   "peerDependencies": {
-    "moment": ">= 2.24.0"
+    "moment": ">= 2.24.0",
+    "moment-duration-format": ">= 2.3.2"
   },
   "devDependencies": {
     "@react-native-community/eslint-config": "^2.0.0",
