@@ -33,7 +33,7 @@ export default class Countdown extends Component<ICountdownProps, IState> {
       minutes: "",
       seconds: "",
       timer: undefined,
-      countdown: (props.defaultCountdown = "- : - : -"),
+      countdown: (props.defaultCountdown || "- : - : -"),
     };
   }
 
