@@ -15,7 +15,7 @@
   ],
   "homepage": "https://www.freakycoder.com",
   "bugs": "https://github.com/WrathChaos/react-native-countdown/issues",
-  "main": "./lib/src/Countdown.js",
+  "main": "./build/dist/Countdown.js",
   "repository": "git@github.com:WrathChaos/react-native-countdown.git",
   "author": "Kuray (FreakyCoder) <kurayogun@gmail.com>",
   "license": "MIT",
