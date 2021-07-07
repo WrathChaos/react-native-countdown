@@ -68,7 +68,7 @@ export default class Countdown extends React.Component<
   }
 
   componentDidUpdate() {
-    if (this.state.timer === 1) {
+    if (this.state.timer === 0) {
       const { onCountdownOver } = this.props;
       onCountdownOver && onCountdownOver();
       clearInterval(this.interval);
