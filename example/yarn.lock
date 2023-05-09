@@ -1094,6 +1094,11 @@
   "resolved" "https://registry.npmjs.org/@eslint/js/-/js-8.40.0.tgz"
   "version" "8.40.0"
 
+"@freakycoder/react-native-countdown@^1.0.0":
+  "integrity" "sha512-lWtz2rGiNfjLZX2Tzn4qXvsVkrCvUSIG1Tozvs5Tx5OYqRVkth/K8b4ZwaEvj/4lAx0frVoiEtyrLlTR1eCi8g=="
+  "resolved" "https://registry.npmjs.org/@freakycoder/react-native-countdown/-/react-native-countdown-1.0.0.tgz"
+  "version" "1.0.0"
+
 "@hapi/hoek@^9.0.0":
   "integrity" "sha512-/c6rf4UJlmHlC9b5BaNvzAcFv7HZ2QHaV0D4/HNlBdvFnvQq8RI4kYdhyPCl7Xj+oWvTWQ8ujhqS53LIgAe6KQ=="
   "resolved" "https://registry.npmjs.org/@hapi/hoek/-/hoek-9.3.0.tgz"
@@ -5209,12 +5214,12 @@
   dependencies:
     "minimist" "^1.2.6"
 
-"moment-duration-format@^2.3.2":
+"moment-duration-format@^2.3.2", "moment-duration-format@>= 2.3.2":
   "integrity" "sha512-cBMXjSW+fjOb4tyaVHuaVE/A5TqkukDWiOfxxAjY+PEqmmBQlLwn+8OzwPiG3brouXKY5Un4pBjAeB6UToXHaQ=="
   "resolved" "https://registry.npmjs.org/moment-duration-format/-/moment-duration-format-2.3.2.tgz"
   "version" "2.3.2"
 
-"moment@^2.29.4":
+"moment@^2.29.4", "moment@>= 2.24.0":
   "integrity" "sha512-5LC9SOxjSc2HF6vO2CyuTDNivEdoz2IvyJJGj6X8DJ0eFyfszE0QiEd+iXmBvUP3WHxSjFH/vIsA0EN00cgr8w=="
   "resolved" "https://registry.npmjs.org/moment/-/moment-2.29.4.tgz"
   "version" "2.29.4"

@@ -1,17 +1,17 @@
-import React from 'react';
-import {View} from 'react-native';
-// import Countdown from '@freakycoder/react-native-countdown';
-import Countdown from './lib/Countdown';
-import moment from 'moment';
+import React from "react";
+import { View } from "react-native";
+import Countdown from "@freakycoder/react-native-countdown";
+import moment from "moment";
 
 const App = () => {
   return (
     <View
       style={{
         flex: 1,
-        alignItems: 'center',
-        justifyContent: 'center',
-      }}>
+        alignItems: "center",
+        justifyContent: "center",
+      }}
+    >
       <Countdown
         start={moment(1578247689000)}
         end={moment(1578557635000)}
